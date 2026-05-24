@@ -9,10 +9,6 @@ WHATSAPP_TOKEN = os.environ.get("WHATSAPP_TOKEN")
 PHONE_NUMBER_ID = os.environ.get("PHONE_NUMBER_ID")
 VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN")
 
-@app.route("/")
-def home():
-    return "WhatsApp AI Agent is running!"
-
 def get_groq_response(message):
     headers = {
         "Authorization": f"Bearer {GROQ_API_KEY}",
@@ -23,7 +19,7 @@ def get_groq_response(message):
         "messages": [
             {
                 "role": "system",
-                "content": "তুমি একজন সহায়ক AI assistant। বাংলায় উত্তর দাও।"
+                "content": "তুমি একজন সহায়ক AI assistant। বাংলায় উত্তর দাও।"
             },
             {
                 "role": "user",
